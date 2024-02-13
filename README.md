@@ -3,18 +3,19 @@
 
 1. Create React App
 2. Configured TailwindCSS into our project. gothrough the documentation for better knowledge. www.tailwindCSS.com
-3.
+3. Header
+4. Login Form
 
 
 
 # Features
 
 -Login / Sign Up
- Sign In / Sign Up Form Creation
- Redirecting to the browser page after Sign In / Sign Up
+  - Sign In / Sign Up Form Creation
+  - Redirecting to the browser page after Sign In / Sign Up
 -Browse page (After Authentication)
- Header
- Main Movie
+ - Header
+ - Main Movie
   - Movie Trailer in background
   - Title & Description
   - Movie Suggestions 
