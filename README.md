@@ -16,7 +16,6 @@
 13. Implemented signout feature.
 14. Redirect to the browse page stopped  without sign in / sign up. (bug fix.)
 15. Update profile API for name & Photo URL.
-16. Movies API From TMDB 
 
 
 
