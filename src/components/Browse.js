@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from './Header'
+import { useSelector } from 'react-redux';
+import Login from './Login';
 
 const Browse = () => {
+  const user = useSelector((store) => store.user);
   return (
-    <div>Browse</div>
+    <div>
+     {user ? <Header/> : <Login/>}
+    </div>
   )
 }
 
