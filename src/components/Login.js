@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import Header from './Header'
 import { checkValidData } from '../utils/validate';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../utils/firebase';
+import { BACKGROUND_URL } from '../utils/constants';
 
 
 
@@ -19,7 +20,6 @@ const Login = () => {
         //form validation
         const validateData = checkValidData(email.current.value, password.current.value);
         setErrMsg(validateData);
-        console.log(validateData);
 
         if (validateData == null) {
             //  Sign In Logic
@@ -27,8 +27,7 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    console.log(user);
-                    navigate("/browse");
+                    navigate('/browse');
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -45,7 +44,7 @@ const Login = () => {
         <div>
             <Header />
             <div className='absolute'>
-                <img src='https://assets.nflxext.com/ffe/siteui/vlv3/5e16108c-fd30-46de-9bb8-0b4e1bbbc509/29d8d7d7-83cc-4b5f-aa9b-6fd4f68bfaa6/IN-en-20240205-popsignuptwoweeks-perspective_alpha_website_large.jpg'
+                <img src={BACKGROUND_URL}
                     alt='backgroundimg' />
             </div>
             <form onSubmit={(e) => e.preventDefault()} className='absolute w-4/12 p-12 bg-black my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-80'>

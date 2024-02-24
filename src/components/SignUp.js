@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { BACKGROUND_URL } from '../utils/constants';
 
 const SignUp = () => {
     const [errMsg, setErrMsg] = useState(null);
@@ -20,7 +21,6 @@ const SignUp = () => {
         //form validation
         const validateData = checkValidData(email.current.value, password.current.value, name.current.value);
         setErrMsg(validateData);
-        console.log(validateData);
 
         if (validateData == null) {
             //  Sign Up Logic
@@ -40,7 +40,6 @@ const SignUp = () => {
                         // An error occurred
                         setErrMsg(error.message);
                     });
-                    console.log(user);
 
                     // ...
                 })
@@ -57,7 +56,7 @@ const SignUp = () => {
         <div>
             <Header />
             <div className='absolute'>
-                <img src='https://assets.nflxext.com/ffe/siteui/vlv3/5e16108c-fd30-46de-9bb8-0b4e1bbbc509/29d8d7d7-83cc-4b5f-aa9b-6fd4f68bfaa6/IN-en-20240205-popsignuptwoweeks-perspective_alpha_website_large.jpg'
+                <img src={BACKGROUND_URL}
                     alt='backgroundimg' />
             </div>
             <form onSubmit={(e) => e.preventDefault()} className='absolute w-4/12 p-12 bg-black my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-80'>
@@ -75,4 +74,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+export default SignUp;
