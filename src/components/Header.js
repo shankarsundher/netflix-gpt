@@ -42,15 +42,15 @@ const Header = () => {
     }, []);
 
     return (
-        <div className='absolute px-6 w-screen py-2 bg-gradient-to-b from-black z-20 flex justify-between'>
+        <div className='absolute px-6 w-full py-2 bg-gradient-to-b from-black z-20 flex justify-between'>
             <img className='w-52' src={LOGO_URL}
                 alt='logoimg' />
-            {user && (<div className='flex py-2'>
+            {user && (<div className='flex py-2 mr-8'>
                 <img className='w-12 h-12'
                     alt='signOutIcon'
                     src={SIGNOUT_URL}
                 />
-                <button onClick={handleSignOut} className='text-red-600 font-bold'>
+                <button onClick={handleSignOut} className='font-bold text-white'>
                     SignOut
                 </button>
             </div>)}
