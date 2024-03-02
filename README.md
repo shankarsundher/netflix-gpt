@@ -39,6 +39,7 @@
 34. Made the Browsre page amazing with Tailwind CSS
 35. usePopularMovies Custom hook
 36. useMovies Custom hook
+37. GPT Search using GPT Api. (Seperate Component.)
 
 
 
